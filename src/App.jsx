@@ -12,10 +12,16 @@ function App() {
     // console.log(bookmarks);
   };
 
-  const handleMarkAsRead = (time) => {
+  const handleMarkAsRead = (id, time) => {
     const newReadingTme = readingTime + time;
     setReadingTime(newReadingTme);
-    console.log(readingTime);
+    // console.log(readingTime);
+    // remove the red blog from bookmark
+    // console.log('remove bookmark', id);
+    const reamainingBookmarks = bookmarks.filter(
+      (bookmark) => bookmark.id !== id
+    );
+    setBookmarks(reamainingBookmarks);
   };
 
   return (
